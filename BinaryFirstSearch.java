@@ -14,7 +14,7 @@ class Node {
 public class BinaryFirstSearch {
 
     Node root;
-
+  private  int aa;
 
 
 
@@ -31,8 +31,19 @@ public class BinaryFirstSearch {
         tree.root.right.right = new Node(6);
 
 
-        System.out.println("Level order traversal of binary tree is ");
-                tree.printLevelOrder();
+//        System.out.println("Level order traversal of binary tree is ");
+//                tree.printLevelOrder();
+        int a =0; int b=0;
+        tree.aa=0;
+        BinaryFirstSearch.temporary(a,b,tree.aa);
+//        temporary(a,b,tree.aa);
+        System.out.println(a+" v"+b+" v"+ tree.aa);
+    }
+
+    private static void temporary(int a, int b, int aa) {
+        ++b;
+        aa++;
+            System.out.println(++a+" "+b+" "+aa);
     }
 
 

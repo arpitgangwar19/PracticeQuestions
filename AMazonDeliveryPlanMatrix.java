@@ -25,8 +25,8 @@ public class AMazonDeliveryPlanMatrix {
         int m = 3;
         int n = 3;
         int mat[][] = { { 1, 1, 1 },
-                        { 1, 0, 0 },
-                        {1, 0 , 9 }
+                        { 1, 0, 1 },
+                        {0, 9 , 1 }
         };
         List<Integer> list = new ArrayList<>();
         int result = 0;
@@ -55,17 +55,19 @@ public class AMazonDeliveryPlanMatrix {
             System.out.println(result);
             result=0;
             System.out.println(list);
-            return;
+
+//            return;
         }
 
+        printMatrix(mat,m,n,i,j-1,list,result);
+        printMatrix(mat,m,n,i-1,j,list,result);
         printMatrix(mat,m,n,i+1,j,list,result);
         printMatrix(mat,m,n,i,j+1,list,result);
 
 
 
-//        printMatrix(mat,m,n,i-1,j,list,result);
 //
-//        printMatrix(mat,m,n,i,j-1,list,result);
+//
        if(!list.isEmpty())
        {
            list.remove(list.size()-1);

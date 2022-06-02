@@ -2,7 +2,7 @@ public class LongestCommonPalindrome {
 
     public  static  void  main(String[] args)
     {
-        String input = "tit";
+        String input = "titrtrt";
         System.out.println("Longest Common Palindrome" +findPalindorme(input));
     }
 
@@ -17,6 +17,8 @@ public class LongestCommonPalindrome {
             int len1 = findLengthFromCenter(input,i,i);
             int len2 = findLengthFromCenter(input,i,i+1);
             int len = Math.max(len1,len2);
+            System.out.println(i+" "+len1);
+            System.out.println(i+" "+len2);
             if(len>end-start)
             {
                 start = i-(len-1)/2;
@@ -31,12 +33,12 @@ public class LongestCommonPalindrome {
 
         int start = Start;
         int end = End;
-        while(start>=0 && end<=input.length() && input.charAt(start)== input.charAt(end))
+        while(start>=0 && end<input.length() && input.charAt(start)== input.charAt(end))
         {
             start--;
             end++;
         }
-        return end-start+1;
+        return end-start-1;
     }
 
 
